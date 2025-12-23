@@ -1,0 +1,35 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Home Page Styles */
+.home-page {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Content Section Placeholder */
+.content-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.content-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    font-size: 42px;
+    font-weight: 600;
+    color: #333333;
+    margin: 0 0 15px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.content-section p {
+    font-size: 18px;
+    color: #666666;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
