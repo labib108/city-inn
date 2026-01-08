@@ -1,0 +1,51 @@
+.contact-us-btn {
+    /* Baseline: 200x60px at 1920px (12.5rem x 3.75rem) */
+    width: 12.5rem;
+    height: 3.75rem;
+
+    background-color: #D9A84E;
+    color: #fff;
+    opacity: 1;
+    border-radius: 0;
+    border: 0.0625rem solid #D9A84E;
+    /* 1px scaled */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 16px -> 1rem */
+    gap: 1rem;
+
+    font-family: 'Inter', sans-serif;
+    /* 16px -> 1rem */
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.0625rem;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact-us-btn:hover {
+    background-color: #c49643;
+}
+
+.contact-us-btn:active {
+    background-color: #b58a3c;
+}
+
+.contact-us-icon {
+    /* 32px -> 2rem */
+    width: 2rem;
+    height: 2rem;
+    color: #fff;
+}
+
+.contact-us-text {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* No longer need manual media queries for sizes as 'rem' 
+   now scales automatically with the viewport width-based font-size */

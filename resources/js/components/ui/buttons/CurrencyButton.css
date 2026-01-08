@@ -1,0 +1,42 @@
+.currency-btn-container {
+    width: 11.25rem;
+    height: 3.75rem;
+    display: flex;
+    opacity: 1;
+    cursor: pointer;
+    border: 0.0625rem solid #D9A84E;
+    /* 1px border */
+}
+
+.currency-part {
+    /* 90x60 -> 5.625rem x 3.75rem */
+    width: 5.625rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 0;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    /* 16px scaled */
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.currency-part:hover {
+    opacity: 0.9;
+}
+
+.currency-part.left {
+    background-color: #D9A84E;
+    color: #fff;
+}
+
+.currency-part.right {
+    background-color: #fff;
+    color: #D9A84E;
+}

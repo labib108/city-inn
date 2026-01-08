@@ -1,0 +1,106 @@
+.booking-bar-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.booking-bar {
+    /* Baseline: 1224x154px -> 76.5rem x 9.625rem */
+    width: 76.5rem;
+    height: 9.625rem;
+
+    /* Background: #000 with 80% opacity */
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    gap: 2rem;
+
+    /* Floating effect/Shadow if needed, though not explicitly asked */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+}
+
+.booking-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    /* 40px */
+    height: 2.5rem;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    /* ~24px scaled */
+    font-weight: 700;
+    color: #fff;
+}
+
+.section-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    /* ~14px scaled */
+    font-weight: 400;
+    color: #ccc;
+}
+
+.section-divider {
+    width: 0.0625rem;
+    height: 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.booking-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Specific overrides for buttons inside the bar if needed */
+.booking-actions .app-btn {
+    /* Maintain proportions */
+}
+
+/* Responsive adjustments */
+/* Responsive adjustments - Keep row layout, fluid scaling handles size */
+@media screen and (max-width: 768px) {
+    .booking-bar {
+        width: 95%;
+        height: auto;
+        padding: 1.5rem;
+        /* Only stack on very small mobile screens if absolutely necessary, 
+           otherwise fluid scaling should keep it small enough */
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .section-divider {
+        display: none;
+    }
+
+    .booking-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .booking-actions {
+        width: 100%;
+        justify-content: center;
+    }
+}

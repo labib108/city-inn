@@ -1,35 +1,64 @@
-/* Import Poppins Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-/* Home Page Styles */
-.home-page {
+.home-container {
     min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
+    /* 40px -> 2.5rem */
+    padding: 2.5rem;
+    background-color: #1a1a1a;
+    color: #fff;
 }
 
-/* Content Section Placeholder */
-.content-section {
-    padding: 100px 20px;
+.home-title {
+    /* 32px -> 2rem */
+    font-size: 2rem;
+    font-weight: 700;
+    /* 40px -> 2.5rem */
+    margin-bottom: 2.5rem;
+    color: #D9A84E;
     text-align: center;
-    background-color: #ffffff;
 }
 
-.content-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
+.component-section {
+    /* 40px -> 2.5rem */
+    margin-bottom: 2.5rem;
+    /* 24px -> 1.5rem */
+    padding: 1.5rem;
+    background-color: #2a2a2a;
+    border-radius: 0.5rem;
+    /* 8px -> 0.5rem */
 }
 
-.content-section h2 {
-    font-size: 42px;
+.component-section h2 {
+    /* 18px -> 1.125rem */
+    font-size: 1.125rem;
     font-weight: 600;
-    color: #333333;
-    margin: 0 0 15px 0;
-    font-family: 'Poppins', sans-serif;
+    /* 20px -> 1.25rem */
+    margin-bottom: 1.25rem;
+    color: #ccc;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    /* 1px -> 0.0625rem */
 }
 
-.content-section p {
-    font-size: 18px;
-    color: #666666;
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+    /* 300px min */
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.button-group {
+    background-color: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-group h3 {
+    font-size: 0.875rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
 }
