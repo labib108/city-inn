@@ -1,0 +1,82 @@
+.google-rating-section {
+    width: 100%;
+    /* Default white background or as per design pattern (DiningSection was white) */
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+.google-rating-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 12%;
+    /* Increased side gap as requested */
+    margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .google-rating-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.rating-card {
+    background-color: #fff;
+    /* Optional shadow for cards */
+    /* box-shadow: 0 4px 6px rgba(0,0,0,0.05); */
+    /* border: 1px solid #eee; */
+    border-radius: 8px;
+    padding: 1.5rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rating-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rating-stars {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    /* Center stars */
+}
+
+.rating-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    font-style: italic;
+    /* Often reviews look nice italicized, optional */
+}
+
+.rating-client {
+    display: flex;
+    flex-direction: column;
+    /* Name under image */
+    align-items: center;
+    /* Center align */
+    gap: 1rem;
+    margin-top: auto;
+    text-align: center;
+}
+
+.client-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.client-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}

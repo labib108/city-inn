@@ -1,0 +1,69 @@
+.convention-section-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow stacking on mobile */
+}
+
+.convention-item {
+    flex: 1;
+    min-width: 250px;
+    /* Ensure items don't get too thin on small screens before stacking */
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.convention-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.convention-item:hover .convention-image {
+    transform: scale(1.05);
+}
+
+.convention-banner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black 50% opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass through if needed, though mostly visual */
+    backdrop-filter: blur(2px);
+    /* Optional: adds subtle glass effect, removing if strictly just opacity asked */
+}
+
+.convention-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+/* Response handling */
+@media (max-width: 768px) {
+    .convention-item {
+        flex: 1 1 50%;
+        /* 2 per row on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .convention-item {
+        flex: 1 1 100%;
+        /* 1 per row on mobile */
+    }
+}

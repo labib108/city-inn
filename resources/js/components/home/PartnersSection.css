@@ -1,0 +1,77 @@
+.partners-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 4rem 0;
+    overflow: hidden;
+    /* Hide scrollbar */
+}
+
+.partners-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.logos-slider-container {
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+}
+
+.logos-slider-track {
+    display: flex;
+    gap: 0;
+    width: fit-content;
+    /* Animation: move 1/3 of the track (since we have 3 sets of items) */
+    animation: scroll 20s linear infinite;
+}
+
+.logo-slide {
+    flex-shrink: 0;
+    /* Mobile: 3 items visible */
+    width: 33.33vw;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .logo-slide {
+        /* Desktop: 5 items visible */
+        width: 20vw;
+    }
+}
+
+.partner-logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100px;
+    /* filter: grayscale(100%); Removed to show original colors */
+    transition: filter 0.3s ease;
+}
+
+.partner-logo:hover {
+    /* No filter change needed if already colorful, or add brightness/scale */
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        /* Move 1/3 of the total width (1 set out of 3) */
+        transform: translateX(-33.3333%);
+    }
+}
+
+/* Pause on hover */
+.logos-slider-container:hover .logos-slider-track {
+    animation-play-state: paused;
+}

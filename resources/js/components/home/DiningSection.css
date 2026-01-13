@@ -1,0 +1,53 @@
+/* Full width container for the grid */
+.dining-section-wrapper {
+    width: 100%;
+    margin-top: 0;
+    background-color: #fff;
+}
+
+/* Grid */
+.dining-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 Columns */
+    gap: 0;
+    /* No gap */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .dining-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+}
+
+/* Card */
+.dining-card {
+    position: relative;
+    width: 100%;
+}
+
+.dining-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 960 / 680;
+    object-fit: cover;
+}
+
+/* Title Overlay (Centered) */
+.dining-overlay-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    pointer-events: none;
+}

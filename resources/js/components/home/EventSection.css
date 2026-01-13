@@ -1,0 +1,115 @@
+/* Wrapper for full width white background */
+.event-section-wrapper {
+    width: 100%;
+    background-color: #fff;
+    padding: 5rem 0;
+}
+
+/* Grid container with standard padding to align with SectionHeader */
+.event-grid-container {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+@media (max-width: 1024px) {
+    .event-grid-container {
+        padding: 0 2rem;
+    }
+}
+
+/* Header Row */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* Passage */
+.event-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Grid */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+}
+
+/* Card */
+.event-card {
+    position: relative;
+    aspect-ratio: 413 / 505;
+    /* Based on 1920px design */
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover .event-image {
+    transform: scale(1.05);
+}
+
+/* Overlay */
+.event-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black 50% opacity */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    /* Inline */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.event-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #fff;
+    font-weight: 600;
+    margin: 0;
+    /* Remove margin for centered alignment */
+}
+
+/* Custom minimal styling for book now button inside overlay if needed, 
+   or reuse AppButton slightly modified via className */
+.event-book-btn {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    margin-left: 1rem;
+}

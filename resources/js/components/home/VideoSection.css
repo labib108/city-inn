@@ -1,0 +1,107 @@
+.video-section-container {
+    width: 100%;
+    /* 1920px -> 760px means 39.58% of width */
+    height: 30vw;
+    min-height: 25rem;
+    /* ~600px min height to ensure content fits on smaller screens */
+    display: flex;
+    font-family: 'Inter', sans-serif;
+}
+
+.video-section-left {
+    flex: 6;
+    /* 60% */
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-section-right {
+    flex: 4;
+    /* 40% */
+    height: 100%;
+    background-color: #000;
+    /* User requested bg color 000 */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    /* Horizontally center the content block */
+    align-items: center;
+    /* Vertically center the content block */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.video-content-block {
+    /* "this content are have 60% width of main area" */
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* "align from left" */
+    text-align: left;
+    /* "align from left" */
+    gap: 2rem;
+}
+
+.video-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    /* Adjusted for scale */
+    font-weight: 700;
+    color: #D9A84E;
+    line-height: 1.2;
+}
+
+.video-passage {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .video-section-container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .video-section-left,
+    .video-section-right {
+        flex: none;
+        width: 100%;
+        height: 50vh;
+        /* Split screen height on tablet/mobile */
+    }
+
+    .video-content-block {
+        width: 80%;
+        /* Relax width constraint on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .video-section-left {
+        height: 18.75rem;
+        /* ~300px image height on mobile */
+    }
+
+    .video-section-right {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .video-content-block {
+        width: 100%;
+    }
+
+    .video-heading {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,41 @@
+.instagram-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 4rem 0;
+}
+
+/* Align action buttons to the right on desktop */
+@media (min-width: 1024px) {
+    .instagram-action {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+/* Grid layout: 4 columns, standard gap */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 6%;
+}
+
+.instagram-item {
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.instagram-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.instagram-item:hover .instagram-image {
+    transform: scale(1.05);
+}

@@ -1,0 +1,133 @@
+.slider-container {
+    width: 100%;
+    /* Responsive height */
+    height: 85vh;
+    max-height: 56.25rem;
+    /* ~900px */
+    min-height: 37.5rem;
+    /* ~600px */
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+
+@media (max-width: 1024px) {
+    .slider-container {
+        height: 70vh;
+        min-height: 31.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        height: auto;
+        min-height: 100vh;
+        /* Full screen on mobile often looks better for heavy content */
+    }
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out, visibility 1s;
+    z-index: 1;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.slide-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+}
+
+/* Overlay for text legibility if needed, currently transparent as requested */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Subtle darkening for text readability */
+    z-index: 2;
+}
+
+.slide-content-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    width: 100%;
+    /* 30% from left as requested initially, now reduced to 15% globally */
+    padding-left: 15%;
+    padding-right: 5%;
+    /* Right padding to prevent text hitting edge */
+    z-index: 3;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Responsive Content Alignment */
+@media (max-width: 1200px) {
+    .slide-content-container {
+        padding-left: 10%;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-content-container {
+        padding-left: 5%;
+        padding-right: 5%;
+        text-align: center;
+        /* Usually centered looks better on mobile */
+    }
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 10;
+}
+
+.indicator {
+    display: block;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #d1d5db;
+    border-radius: 9999px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.indicator.active {
+    width: 2rem;
+    background-color: #D9A84E;
+    /* Golden active state to match brand */
+}

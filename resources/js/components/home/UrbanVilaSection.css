@@ -1,0 +1,185 @@
+.urban-vila-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: #f5f5f5;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .urban-vila-container {
+        padding: 0;
+    }
+}
+
+/* --- Top Header Section --- */
+.urban-vila-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .urban-vila-header {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+.urban-vila-text {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .urban-vila-text {
+        width: 50%;
+        max-width: 600px;
+    }
+}
+
+.urban-vila-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+}
+
+.urban-vila-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 90%;
+}
+
+.urban-vila-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .urban-vila-nav {
+        width: 50%;
+        justify-content: center;
+        align-self: flex-start;
+        padding-top: 1rem;
+    }
+}
+
+.urban-see-all {
+    margin-left: 2rem;
+    /* Extra separation from arrows */
+}
+
+.nav-arrow-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid #D9A84E;
+    background: transparent;
+    color: #D9A84E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-arrow-btn:hover {
+    background: #D9A84E;
+    color: #fff;
+}
+
+.urban-see-all {
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+/* --- Bottom Slider Section --- */
+.urban-slider-window {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 0;
+    /* Optional spacing from header */
+}
+
+.urban-slider-track {
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.5s ease-in-out;
+}
+
+.urban-slide-card {
+    min-width: calc(50% - 0.75rem);
+    /* show 2 items minus gap */
+    height: 30rem;
+    /* Increased height */
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .urban-slide-card {
+        min-width: 100%;
+    }
+
+    .urban-vila-nav {
+        justify-content: flex-start;
+    }
+}
+
+.urban-slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.urban-slide-overlay-strip {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    transform: translateY(-50%);
+}
+
+.urban-slide-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #D9A84E;
+    font-weight: 700;
+}
+
+.urban-slide-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #D9A84E;
+    background: transparent;
+    border: 1px solid #D9A84E;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.urban-slide-btn:hover {
+    background: #D9A84E;
+    color: #000;
+}
