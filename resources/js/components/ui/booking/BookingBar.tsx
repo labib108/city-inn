@@ -1,4 +1,5 @@
 import React from 'react';
+import { router } from '@inertiajs/react';
 import { AppButton } from '../buttons';
 import './BookingBar.css';
 
@@ -65,11 +66,13 @@ export const BookingBar: React.FC = () => {
                         label="SEARCH ROOM"
                         variant="solid-golden"
                         icon={<SearchIcon />}
+                        onClick={() => router.visit('/booking')}
                     />
                     <AppButton
                         label="BOOK NOW"
                         variant="transparent-golden"
                         width="10.625rem"
+                        onClick={() => router.visit('/booking')}
                     />
                 </div>
             </div>

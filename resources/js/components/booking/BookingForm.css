@@ -1,0 +1,274 @@
+.booking-form-container {
+    background-color: #fff;
+    padding: 4rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.booking-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #D9A84E;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.booking-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.booking-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #1a1a1a;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.booking-text-heading {
+    font-family: 'Playfair Display', serif;
+    /* Or maybe Inter bold? Image looks like Serif Bold */
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 0.8rem;
+    border: 1px solid #999;
+    /* Darker border as per image */
+    border-radius: 0;
+    /* Square edges in image */
+    font-size: 1rem;
+    color: #333;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #D9A84E;
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Custom Checkbox Styling */
+.checkbox-group {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.custom-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    position: relative;
+    padding-left: 2.5rem;
+    /* Space for custom box */
+    user-select: none;
+}
+
+.custom-checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1px solid #999;
+}
+
+.custom-checkbox-label:hover input~.checkmark {
+    background-color: #f5f5f5;
+}
+
+.custom-checkbox-label input:checked~.checkmark {
+    background-color: #fff;
+    /* Keep white, maybe add check icon */
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox-label input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox-label .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #D9A84E;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Or if image shows filled box? Image shows just a box, hard to see if checked state is shown. Assuming standard check. */
+
+
+/* Seating Cards */
+.seating-arrangement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.seating-card {
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+}
+
+.seating-card-content {
+    display: flex;
+    /* align-items: flex-start; */
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    justify-content: center;
+    /* Center content */
+    position: relative;
+}
+
+.seating-checkbox {
+    position: absolute;
+    left: 10%;
+    top: 0;
+}
+
+.custom-box {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #999;
+    background: #fff;
+}
+
+.custom-box.checked {
+    border-color: #D9A84E;
+    background-color: #D9A84E;
+    /* Or checkmark */
+}
+
+.seating-icon {
+    width: 50px;
+    /* Adjust based on image */
+    height: 50px;
+    object-fit: contain;
+}
+
+.seating-name {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Button */
+.form-btn-container {
+    display: flex;
+    margin-top: 4rem;
+}
+
+.form-btn-container.right-align {
+    justify-content: flex-end;
+}
+
+.form-submit-btn {
+    background-color: #D9A84E;
+    color: #fff;
+    border: none;
+    padding: 1rem 4rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    /* Square button ? */
+}
+
+.full-width-checkboxes {
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .booking-form-container {
+        padding: 2rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .seating-arrangement-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .full-width-checkboxes {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

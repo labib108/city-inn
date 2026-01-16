@@ -6,14 +6,18 @@ interface ConventionItemProps {
     image: string;
 }
 
-const items: ConventionItemProps[] = [
+const defaultItems: ConventionItemProps[] = [
     { title: 'Restaurant', image: '/images/home/resturant.png' },
     { title: 'Convention Hall', image: '/images/home/convention_hall.png' },
     { title: 'Lobby', image: '/images/home/lobby.png' },
     { title: 'Swimming Pool', image: '/images/home/swimming_pool.png' }
 ];
 
-const ConventionSection: React.FC = () => {
+interface ConventionSectionProps {
+    items?: ConventionItemProps[];
+}
+
+const ConventionSection: React.FC<ConventionSectionProps> = ({ items = defaultItems }) => {
     return (
         <div className="convention-section-container">
             {items.map((item, index) => (
@@ -34,5 +38,6 @@ const ConventionSection: React.FC = () => {
         </div>
     );
 };
+
 
 export default ConventionSection;

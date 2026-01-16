@@ -3,9 +3,19 @@ import { AppButton } from '@/components/ui/buttons';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import './InstagramFeedSection.css';
 
-const images = Array.from({ length: 12 }, (_, i) => `/images/home/instafeed/${i + 1}.png`);
+const defaultImages = Array.from({ length: 12 }, (_, i) => `/images/home/instafeed/${i + 1}.png`);
 
-const InstagramFeedSection: React.FC = () => {
+interface InstagramFeedSectionProps {
+    title?: string;
+    description?: string;
+    images?: string[];
+}
+
+const InstagramFeedSection: React.FC<InstagramFeedSectionProps> = ({
+    title = "Instagram Feed",
+    description = "Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Pan Pacific Sonargaon Dhaka is known for.",
+    images = defaultImages
+}) => {
     const instagramLink = 'https://instagram.com/yourprofile'; // placeholder link
 
     const headerAction = (
@@ -18,8 +28,8 @@ const InstagramFeedSection: React.FC = () => {
     return (
         <section className="instagram-section">
             <SectionHeader
-                title="Instagram Feed"
-                description="Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Pan Pacific Sonargaon Dhaka is known for."
+                title={title}
+                description={description}
                 action={headerAction}
             />
             <div className="instagram-grid">

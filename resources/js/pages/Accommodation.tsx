@@ -1,23 +1,13 @@
 import React from 'react';
-import { AppButton, CurrencyButton, ContactUsButton } from '@/components/ui/buttons';
-
 import Slider, { Slide } from '@/components/ui/slider/Slider';
-import { BookingBar } from '@/components/ui/booking';
 import VideoSection from '@/components/home/VideoSection';
-import ConventionSection from '@/components/home/ConventionSection';
-import UrbanVilaSection from '@/components/home/UrbanVilaSection';
 import EventSection from '@/components/home/EventSection';
-import DiningSection from '@/components/home/DiningSection';
 import InstagramFeedSection from '@/components/home/InstagramFeedSection';
-import ExploreSection from '@/components/home/ExploreSection';
-import GoogleRatingSection from '@/components/home/GoogleRatingSection';
-import CorporateTestimonialSection from '@/components/home/CorporateTestimonialSection';
-import PartnersSection from '@/components/home/PartnersSection';
-
 import MainLayout from '@/Layouts/MainLayout';
-import './Home.css';
+import { BookingBar } from '@/components/ui/booking';
+import './Home.css'; // Reusing Home styles for consistency
 
-// Styles for the specific slide texts
+// Styles for the specific slide texts - reused from Home.tsx for now
 const slideStyles = {
     heading: {
         fontFamily: "'Playfair Display', serif",
@@ -33,7 +23,7 @@ const slideStyles = {
     paragraph: {
         fontFamily: "'Inter', sans-serif",
         fontSize: '1rem',
-        color: '#f0f0f0', // Slight off-white for readability
+        color: '#f0f0f0',
         maxWidth: '31.25rem', // ~500px
         lineHeight: 1.6,
         marginBottom: '2rem'
@@ -59,8 +49,23 @@ const slideStyles = {
 };
 
 const homeSlides: Slide[] = [
+
     {
         id: 1,
+        image: '/images/slider/home2.png',
+        content: (
+            <div>
+                <h1 style={slideStyles.heading}>
+                    Welcome to <span style={slideStyles.highlight}>Urban Vila</span>
+                </h1>
+                <p style={slideStyles.paragraph}>
+                    Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Urban Vila is known for.
+                </p>
+            </div>
+        )
+    },
+    {
+        id: 2,
         image: '/images/slider/home1.png',
         content: (
             <div>
@@ -89,20 +94,6 @@ const homeSlides: Slide[] = [
                 <div style={{ marginTop: '2rem' }}>
                     <BookingBar />
                 </div>
-            </div>
-        )
-    },
-    {
-        id: 2,
-        image: '/images/slider/home2.png',
-        content: (
-            <div>
-                <h1 style={slideStyles.heading}>
-                    Welcome to <span style={slideStyles.highlight}>Urban Vila</span>
-                </h1>
-                <p style={slideStyles.paragraph}>
-                    Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Urban Vila is known for.
-                </p>
             </div>
         )
     },
@@ -136,37 +127,33 @@ const homeSlides: Slide[] = [
     }
 ];
 
-const SearchIcon = () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-    </svg>
-);
-
-export default function Home() {
+export default function Accommodation() {
     return (
         <MainLayout>
             <Slider slides={homeSlides} />
 
-            <VideoSection />
+            <VideoSection
+                image="/images/accomodation/VideoSection.png"
+            />
 
-            <ConventionSection />
+            <EventSection
+                title="Accommodation in a Luxury Hotel"
+                description="Accommodation is mandatory in a Luxury hotel."
+                showButton={false}
+                events={[
+                    { id: 1, title: 'Platinum Suite', image: '/images/accomodation/accomodation1.png' },
+                    { id: 2, title: 'Exclusive Suite', image: '/images/accomodation/accomodation2.png' },
+                    { id: 3, title: 'Suite', image: '/images/accomodation/accomodation3.png' },
+                    { id: 1, title: 'City Suite', image: '/images/accomodation/accomodation4.png' },
+                    { id: 2, title: 'Super Deluxe', image: '/images/accomodation/accomodation5.png' },
+                    { id: 3, title: 'Deluxe', image: '/images/accomodation/accomodation6.png' },
+                    { id: 3, title: 'Classic', image: '/images/accomodation/accomodation7.png' }
+                ]}
+            />
 
-            <UrbanVilaSection />
-
-            <EventSection />
-
-            <DiningSection />
-
-            <InstagramFeedSection />
-
-            <ExploreSection />
-
-            <GoogleRatingSection />
-
-            <CorporateTestimonialSection />
-
-            <PartnersSection />
+            <InstagramFeedSection
+                title="Hotel Room On Instagram Reels"
+            />
 
         </MainLayout>
     );

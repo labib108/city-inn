@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                     <div className="copyright-row">
                         <p>
                             &copy; {new Date().getFullYear()} City Inn Ltd. All Rights Reserved.
-                            <span style={{ marginLeft: '1rem' }}>Developed by Nandanik</span>
+                            <span style={{ marginLeft: '1rem' }}>Developed by Bae Innovation</span>
                         </p>
                     </div>
                 </div>

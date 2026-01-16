@@ -1,27 +1,38 @@
 import React, { useState } from 'react';
+import { router } from '@inertiajs/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { AppButton } from '@/components/ui/buttons';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import './UrbanVilaSection.css';
 
-interface SlideData {
+export interface SlideData {
     id: number;
     title: string;
     image: string;
     link: string;
 }
 
-const slides: SlideData[] = [
+const defaultSlides: SlideData[] = [
     { id: 1, title: 'Deluxe', image: '/images/home/urban-vila1.png', link: '#' },
     { id: 2, title: 'Premium', image: '/images/home/urban-vila2.png', link: '#' },
     { id: 3, title: 'Deluxe Twin', image: '/images/home/urban-vila1.png', link: '#' },
     { id: 4, title: 'Premium Suite', image: '/images/home/urban-vila2.png', link: '#' }
 ];
 
-const UrbanVilaSection: React.FC = () => {
+interface UrbanVilaSectionProps {
+    title?: string;
+    description?: string;
+    slides?: SlideData[];
+}
+
+const UrbanVilaSection: React.FC<UrbanVilaSectionProps> = ({
+    title = "Its An Urban Vila",
+    description = "Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Pan Pacific Sonargaon Dhaka is known for.",
+    slides = defaultSlides
+}) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const itemsPerScreen = 2;
-    const maxIndex = slides.length - itemsPerScreen;
+    const maxIndex = Math.max(0, slides.length - itemsPerScreen);
 
     const nextSlide = () => {
         setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
@@ -46,8 +57,8 @@ const UrbanVilaSection: React.FC = () => {
     return (
         <section className="urban-vila-container">
             <SectionHeader
-                title="Its An Urban Vila"
-                description="Come home to the tranquility of your personal retreat, designed to reset your mind and body to a peaceful equilibrium with the plush accommodation, first-class facilities and impeccable service that Pan Pacific Sonargaon Dhaka is known for."
+                title={title}
+                description={description}
                 action={navButtons}
             />
 
@@ -61,7 +72,7 @@ const UrbanVilaSection: React.FC = () => {
                             <img src={slide.image} alt={slide.title} className="urban-slide-image" />
                             <div className="urban-slide-overlay-strip">
                                 <span className="urban-slide-title">{slide.title}</span>
-                                <button className="urban-slide-btn">VIEW ROOM & RATES</button>
+                                <button className="urban-slide-btn" onClick={() => router.visit('/booking')}>VIEW ROOM & RATES</button>
                             </div>
                         </div>
                     ))}

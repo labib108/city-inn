@@ -3,29 +3,40 @@ import { AppButton } from '@/components/ui/buttons';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import './EventSection.css';
 
-interface EventItem {
+export interface EventItem {
     id: number;
     title: string;
     image: string;
 }
 
-const events: EventItem[] = [
+const defaultEvents: EventItem[] = [
     { id: 1, title: 'City Convention Hall(South Plaza)', image: '/images/home/event1.png' },
     { id: 2, title: 'City Convention Hall(North Plaza)', image: '/images/home/event2.png' },
     { id: 3, title: 'City Convention Hall(BELI)', image: '/images/home/event3.png' }
 ];
 
-const EventSection: React.FC = () => {
-    const seeMoreButton = (
+interface EventSectionProps {
+    title?: string;
+    description?: string;
+    events?: EventItem[];
+    showButton?: boolean;
+}
+
+const EventSection: React.FC<EventSectionProps> = ({
+    title = "Events in a luxury hotel",
+    description = "Conference Hall, Meeting venue, and other banquet hall with Others\nlogistics.",
+    events = defaultEvents,
+    showButton = true
+}) => {
+    const seeMoreButton = showButton ? (
         <AppButton label="SEE MORE" variant="solid-golden" width="10rem" />
-    );
+    ) : null;
 
     return (
         <div className="event-section-wrapper">
             <SectionHeader
-                title="Events in a luxury hotel"
-                description="Conference Hall, Meeting venue, and other banquet hall with Others
-logistics."
+                title={title}
+                description={description}
                 action={seeMoreButton}
             />
 
